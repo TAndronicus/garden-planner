@@ -1,34 +1,10 @@
-from domain.garden import Garden
-from domain.bed import Bed
-from domain.bed_part import BedPart
+from garden_plotter import plot_garden, plot_rotations
+import garden_23_05
+import garden_23_08
 
-from plants import Plants, get_plants_map
+prev_garden = garden_23_05.garden
+next_garden = garden_23_08.garden
 
-from garden_plotter import plot_garden
 
-garden = Garden([
-    [
-        Bed([
-            BedPart(0, 1, 0, 1, Plants.TOMATOES)
-        ]),
-        Bed([
-            BedPart(0, .5, 0, 1, Plants.ZUCCHINI),
-            BedPart(.5, 1, 0, 1, Plants.SQUASH)
-        ])
-    ],
-    [
-        Bed([
-            BedPart(0, .5, 0, 1, Plants.CARROTS),
-            BedPart(.5, 1, 0, 1, Plants.POTATOES)
-        ]),
-        Bed([
-            BedPart(0, .5, 0, .5, Plants.THYME),
-            BedPart(0, .5, .5, 1, Plants.BASIL),
-            BedPart(.5, 1, 0, .5, Plants.OREGANO),
-            BedPart(.5, 1, .5, 1, Plants.ROSEMARY)
-        ])
-    ]
-])
-
-plot_garden(garden)
-print(get_plants_map(garden))
+plot_garden(prev_garden)
+# plot_rotations(prev_garden, next_garden)
