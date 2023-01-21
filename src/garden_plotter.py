@@ -37,6 +37,18 @@ def plot_rotations(prev_garden, next_garden):
     plt.show()
 
 
+def plot_calendar(garden):
+    names = []
+    for row in garden.beds:
+        for bed in row:
+            for bed_part in bed.bed_parts:
+                plant = bed_part.plant
+                plt.plot([plant.sow_start, plant.sow_end + 1], [plant.name, plant.name], color='g')
+                plt.plot([plant.harvest_start, plant.harvest_end + 1], [plant.name, plant.name], color='r')
+                names.append(plant.name)
+    plt.yticks(names)
+    plt.show()
+
 def calculate_coordinates(col_n, row_n, bed_part):
     x_min, x_max = row_n + bed_part.x_min, row_n + bed_part.x_max
     y_min, y_max = col_n + bed_part.y_min, col_n + bed_part.y_max
