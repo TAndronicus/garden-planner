@@ -30,5 +30,5 @@ garden = Garden([
     ]
 ])
 
-# plot_garden(garden)
+plot_garden(garden)
 print(get_plants_map(garden))
