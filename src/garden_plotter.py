@@ -16,7 +16,7 @@ def plot_garden(garden):
     plt.show()
 
 
-def plot_rotations(prev_garden, next_garden):
+def plot_rotations(prev_garden, next_garden, title=None):
     col_n = 0
     for i in range(min(len(prev_garden.beds), len(next_garden.beds))):
         row_n = 0
@@ -34,6 +34,8 @@ def plot_rotations(prev_garden, next_garden):
                              horizontalalignment='center', verticalalignment='center')
             row_n += 1.5
         col_n += 1.5
+    if title is not None:
+        plt.title(title)
     plt.show()
 
 
