@@ -1,8 +1,8 @@
-from domain.garden import Garden
-from domain.bed import Bed
-from domain.bed_part import BedPart
+from ..domain.garden import Garden
+from ..domain.bed import Bed
+from ..domain.bed_part import BedPart
 
-from plants import Plants
+from ..plants import Plants
 
 garden = Garden([
     [
